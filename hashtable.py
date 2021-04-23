@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 class HashTable():
-    def __init__(self, initalSize):
-        self.table = [[] for _ in range(initalSize)]
+    def __init__(self, initalLength=10):
+        self.table = [[] for _ in range(initalLength)]
         self.size = 0
     
     # def __delete__(self, instance):
@@ -31,6 +31,10 @@ class HashTable():
     def __len__(self):
         return self.size
     
+    def __str__(self):
+        return str([(key, value) for bucket in self.table for item in bucket])
+        
+
     def hash(self, key):
         return hash(key) % len(self.table)
 

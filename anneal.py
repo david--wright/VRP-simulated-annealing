@@ -16,7 +16,7 @@ class Anneal():
         self.minT = minT
         self.temp = maxT
         self.maxT = maxT
-        self.limits = limits[:] //shallow copy of limits 
+        self.limits = limits[:] #shallow copy of limits 
         self.state = inital_state
         self.energy = self.costF(self.xInital)
         self.lowState = self.state
@@ -59,7 +59,7 @@ class Anneal():
     '''
     def start(self):
         while minT < self.temp and self.cycle < self.maxCycle:
-            neighbor = self.state[:] //shallow copy of state
+            neighbor = self.state[:] #shallow copy of state
             n1 = randint(0, self.xN-1)
             n2 = randint(0, self.xN-1)
             neighbor[n1], neighbor[n2] = neighbor[n2], neighbor[n1]
